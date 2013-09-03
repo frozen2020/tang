@@ -1,0 +1,27 @@
+---------------------------  LASERDRVR.pjt - Debug  ---------------------------
+[actions.c] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "actions.c"
+[actions.c]
+
+[CVECTORS.ASM] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "CVECTORS.ASM"
+<cvectors.asm>
+
+[ISR.c] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "ISR.c"
+[isr.c]
+
+[RS232.C] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "RS232.C"
+[rs232.c]
+
+[yucojca.C] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "yucojca.C"
+[yucojca.c]
+
+[YucoSupport.c] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -g -q -fr"C:/Ti2000/ALL/A8_RS232_4302_AUTO_20K/Debug" -d"_DEBUG" -v2xx -@"Debug.lkf" "YucoSupport.c"
+[yucosupport.c]
+
+[Linking...] "C:\CCStudio_v3.3\C2400\cgtools\bin\dspcl" -@"Debug.lkf"
+<Linking>
+TMS320C24xx COFF Linker                 Version 7.04
+Copyright (c) 1987-2003  Texas Instruments Incorporated 
+
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

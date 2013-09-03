@@ -1,0 +1,443 @@
+******************************************************************************
+TMS320C24xx COFF Linker           Version 7.04                   
+******************************************************************************
+>> Linked Thu Aug 22 10:01:43 2013
+
+OUTPUT FILE NAME:   <./Debug/laserdrvr.out>
+ENTRY POINT SYMBOL: "_c_int0"  address: 00003509
+
+
+MEMORY CONFIGURATION
+
+           name     origin    length      used    attributes    fill
+         --------  --------  ---------  --------  ----------  --------
+PAGE 0: VECS      00000000  000000040  00000040     RWIX      
+         FLASH     00000044  000007fbc  00004080     RWIX      
+
+PAGE 1: B2        00000060  000000020  00000000     RWIX      
+         B0        00000200  000000100  00000000     RWIX      
+         B1        00000300  000000100  00000000     RWIX      
+         SARAM     00000800  000000800  000005c3     RWIX      
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    00000044    00003b75     
+                  00000044    000011bd     actions.obj (.text)
+                  00001201    00000000     CVECTORS.obj (.text)
+                  00001201    0000006b     ISR.obj (.text)
+                  0000126c    0000079e     RS232.obj (.text)
+                  00001a0a    0000071b     yucojca.obj (.text)
+                  00002125    000013e4     YucoSupport.obj (.text)
+                  00003509    00000027     rts2xx.lib : boot.obj (.text)
+                  00003530    00000050                : exit.obj (.text)
+                  00003580    000000b4                : f_add.obj (.text)
+                  00003634    00000055                : f_cmp.obj (.text)
+                  00003689    000000a4                : f_div.obj (.text)
+                  0000372d    00000001                : f_error.obj (.text)
+                  0000372e    00000041                : f_ftoi.obj (.text)
+                  0000376f    00000053                : f_ftol.obj (.text)
+                  000037c2    00000044                : f_ftou.obj (.text)
+                  00003806    00000024                : f_itof.obj (.text)
+                  0000382a    00000031                : f_ltof.obj (.text)
+                  0000385b    0000007c                : f_mul.obj (.text)
+                  000038d7    0000000d                : f_sub.obj (.text)
+                  000038e4    00000019                : f_utof.obj (.text)
+                  000038fd    0000008d                : idiv.obj (.text)
+                  0000398a    000000ea                : ldiv.obj (.text)
+                  00003a74    0000002e                : saverest.obj (.text)
+                  00003aa2    0000001a                : strcpy.obj (.text)
+                  00003abc    00000041                : strncmp.obj (.text)
+                  00003afd    00000034                : strncpy.obj (.text)
+                  00003b31    00000088                : udiv.obj (.text)
+
+.cinit     0    00003bb9    0000050b     
+                  00003bb9    00000504     yucojca.obj (.cinit)
+                  000040bd    00000006     rts2xx.lib : exit.obj (.cinit)
+                  000040c3    00000001     --HOLE-- [fill = 0000]
+
+.switch    0    00000044    00000000     UNINITIALIZED
+
+.const     1    00000300    00000000     UNINITIALIZED
+
+//.const   0    00000044    00000000     UNINITIALIZED
+
+my_sect    1    00000200    00000000     UNINITIALIZED
+
+.bss       1    00000800    0000059b     UNINITIALIZED
+                  00000800    0000055d     yucojca.obj (.bss)
+                  00000d5d    00000000     rts2xx.lib : f_error.obj (.bss)
+                  00000d5d    00000000                : f_div.obj (.bss)
+                  00000d5d    00000000                : f_cmp.obj (.bss)
+                  00000d5d    00000000                : f_ftou.obj (.bss)
+                  00000d5d    00000000                : f_ftol.obj (.bss)
+                  00000d5d    00000000                : f_ftoi.obj (.bss)
+                  00000d5d    00000000     ISR.obj (.bss)
+                  00000d5d    00000000     CVECTORS.obj (.bss)
+                  00000d5d    00000000     actions.obj (.bss)
+                  00000d5d    00000000     rts2xx.lib : f_add.obj (.bss)
+                  00000d5d    00000000                : boot.obj (.bss)
+                  00000d5d    00000000     YucoSupport.obj (.bss)
+                  00000d5d    00000000     rts2xx.lib : saverest.obj (.bss)
+                  00000d5d    00000000                : udiv.obj (.bss)
+                  00000d5d    00000000                : ldiv.obj (.bss)
+                  00000d5d    00000000                : strncmp.obj (.bss)
+                  00000d5d    00000000                : strncpy.obj (.bss)
+                  00000d5d    00000000                : strcpy.obj (.bss)
+                  00000d5d    00000000                : f_mul.obj (.bss)
+                  00000d5d    00000000                : f_ltof.obj (.bss)
+                  00000d5d    00000000                : f_itof.obj (.bss)
+                  00000d5d    00000000                : idiv.obj (.bss)
+                  00000d5d    00000000                : f_utof.obj (.bss)
+                  00000d5d    00000000                : f_sub.obj (.bss)
+                  00000d5d    00000022                : exit.obj (.bss)
+                  00000d80    0000001b     RS232.obj (.bss)
+
+.stack     1    00000d9b    00000028     UNINITIALIZED
+                  00000d9b    00000000     rts2xx.lib : boot.obj (.stack)
+
+.sysmem    1    00000300    00000000     UNINITIALIZED
+
+vectors    0    00000000    00000040     
+                  00000000    00000040     CVECTORS.obj (vectors)
+
+.data      1    00000300    00000000     UNINITIALIZED
+                  00000300    00000000     actions.obj (.data)
+                  00000300    00000000     rts2xx.lib : udiv.obj (.data)
+                  00000300    00000000                : strncpy.obj (.data)
+                  00000300    00000000                : strncmp.obj (.data)
+                  00000300    00000000                : strcpy.obj (.data)
+                  00000300    00000000                : saverest.obj (.data)
+                  00000300    00000000                : ldiv.obj (.data)
+                  00000300    00000000                : idiv.obj (.data)
+                  00000300    00000000                : f_utof.obj (.data)
+                  00000300    00000000                : f_sub.obj (.data)
+                  00000300    00000000                : f_mul.obj (.data)
+                  00000300    00000000                : f_ltof.obj (.data)
+                  00000300    00000000                : f_itof.obj (.data)
+                  00000300    00000000                : f_ftou.obj (.data)
+                  00000300    00000000                : f_ftol.obj (.data)
+                  00000300    00000000                : f_ftoi.obj (.data)
+                  00000300    00000000                : f_error.obj (.data)
+                  00000300    00000000                : f_div.obj (.data)
+                  00000300    00000000                : f_cmp.obj (.data)
+                  00000300    00000000                : f_add.obj (.data)
+                  00000300    00000000                : exit.obj (.data)
+                  00000300    00000000                : boot.obj (.data)
+                  00000300    00000000     YucoSupport.obj (.data)
+                  00000300    00000000     yucojca.obj (.data)
+                  00000300    00000000     RS232.obj (.data)
+                  00000300    00000000     ISR.obj (.data)
+                  00000300    00000000     CVECTORS.obj (.data)
+
+table      0    00000044    00000000     UNINITIALIZED
+
+
+GLOBAL SYMBOLS
+
+address  name                             address  name
+-------- ----                             -------- ----
+00000800 .bss                             00000028 __STACK_SIZE
+00000300 .data                            00000044 .text
+00000044 .text                            00000044 _clearstring
+0000357d C$$EXIT                          00000076 _shutterOff
+00003580 F$$ADD                           0000008f _qswonAction
+00003634 F$$COMPARE                       000000b5 _alarmAction
+00003689 F$$DIV                           000000cf _resetAction
+00003677 F$$EQ                            000000e9 _pulseRateAction
+0000372e F$$FTOI                          0000012c _keyswOffAction
+0000376f F$$FTOL                          00000186 _qswextAction
+000037c2 F$$FTOU                          000001f2 _shtonAction
+00003683 F$$GE                            0000022f _defaultAction
+00003686 F$$GT                            00000300 edata
+00003806 F$$ITOF                          00000300 .data
+0000367d F$$LE                            00000613 _keyswFirstOnAction
+0000382a F$$LTOF                          00000800 _LOOP
+00003680 F$$LT                            00000800 .bss
+0000385b F$$MUL                           00000801 _TPFLAG
+0000367a F$$NE                            00000802 _BEEPER
+000038d7 F$$SUB                           00000803 _functionAction
+00003852 F$$ULTOF                         00000803 _OLD_KEYSW_ON
+000038e4 F$$UTOF                          00000804 _WriteFlag
+000038fd I$$DIV                           00000805 _InitingError
+00003939 I$$MOD                           00000806 _SecurityIniting
+00003a8c I$$REST                          00000807 _ADTIMER
+00003a74 I$$SAVE                          00000808 _TimeC_Sec
+00003b31 I$$UDIV                          00000809 _TimeC_Min
+00003b57 I$$UMOD                          0000080a _TimeC_2Min
+0000398a L$$DIVS                          0000080b _TimeC_8Min
+000039fc L$$DIVU                          0000080c _Sign_2Min
+000039c5 L$$MODS                          0000080d _Sign_8Min
+00003a1c L$$MODU                          0000080e _REMLOC
+0000084b _ADJUST                          0000080f _FUNCTION
+00000807 _ADTIMER                         00000810 _QSWON
+00000802 _BEEPER                          00000811 _QSWEXT
+0000083e _BTIME                           00000812 _RF_OFF
+00000878 _D1_ACT                          00000813 _FirstStemp
+0000087c _D1_DIF                          00000814 _PLACE
+000008b4 _D1_ERROR                        00000815 _RESET
+0000089a _D1_INT                          00000816 _clearWarning
+00000821 _D1_OUT_OLD                      00000817 _DIODESELECT
+00000829 _D1_OUT                          00000818 _QSWEN
+000008b8 _D1_PROP                         00000819 _EXTDCUR
+000008a0 _D1_SET                          0000081a _EXTDCUR2
+0000082e _D1_SUM                          0000081b _SHTON
+00000886 _D2_ACT                          0000081c _UPDRAT
+000008bc _D2_SET                          0000081d _DIMAX
+0000088c _DATA                            0000081e _FPS_LEVEL_SET
+000008d4 _DCL                             0000081f _EXRFP
+0000081d _DIMAX                           00000820 _RES_ENVIR
+0000082a _DIODECUR_ACT2                   00000821 _D1_OUT_OLD
+00000894 _DIODECUR2                       00000822 _FanLaser_OUT
+00000833 _DIODECUR_ACT                    00000823 _EXTFREQ
+00000908 _DIO                             00000824 _XTL1ACT
+0000086e _DIODECUR                        00000825 _smooth
+00000817 _DIODESELECT                     00000826 _MODE_DONE
+00000872 _DUMMY                           00000827 _EXTD
+00000864 _Diode_SetPt2                    00000828 _ENVIR
+00000862 _Diode_SetPt                     00000829 _D1_OUT
+00000866 _DspTmr                          0000082a _DIODECUR_ACT2
+0000085b _EMPTY                           0000082b _FCTR
+00000859 _ENIVR                           0000082c _OLD_ERROR_L
+0000084d _ENVACT                          0000082d _Iindex
+00000828 _ENVIR                           0000082e _D1_SUM
+000008ac _ENVIR_TEMP                      0000082f _ZERO
+0000084c _ENVSET                          00000830 _EQUAL
+00000830 _EQUAL                           00000831 _FPS_LEVEL
+00000918 _ERROR                           00000832 _FPS_ON
+0000081f _EXRFP                           00000833 _DIODECUR_ACT
+00000819 _EXTDCUR                         00000834 _Time
+0000081a _EXTDCUR2                        00000835 _JumpInit
+000008e4 _EXT                             00000836 _T6
+00000827 _EXTD                            00000837 _T9
+00000823 _EXTFREQ                         00000838 _T5
+0000082b _FCTR                            00000839 _T4
+00000900 _FPL                             0000083a _MODE_SEL
+0000081e _FPS_LEVEL_SET                   0000083b _Sctr
+000008cc _FPS                             0000083c _T2
+00000831 _FPS_LEVEL                       0000083d _NEW_LINE
+0000085f _FPS_ON_SET                      0000083e _BTIME
+00000832 _FPS_ON                          0000083f _fps_index_count
+0000085d _FREQ                            00000840 _T1
+0000080f _FUNCTION                        00000841 _gate_pre
+0000088e _FanLaser_DIF                    00000842 _FanLaser_OUT_OLD
+000008c0 _FanLaser_ERROR                  00000843 _KEY
+000008ae _FanLaser_INT                    00000844 _RF_GATE_ON
+000008b0 _FanLaser_OLD_ERROR              00000845 _index
+00000842 _FanLaser_OUT_OLD                00000846 _XTL1SET
+00000822 _FanLaser_OUT                    00000847 _wrf
+0000089c _FanLaser_PROP                   00000848 _QUESTION
+00000813 _FirstStemp                      00000849 _adTimerVar
+00002427 _First                           0000084a _RES_LASER_TEMP
+00002a58 _GETTEMP                         0000084b _ADJUST
+0000090c _HOLD                            0000084c _ENVSET
+000008f4 _IDI                             0000084d _ENVACT
+00000868 _INITCUR                         0000084e _XTL2SET
+0000086a _INITCUR2                        0000084f _chr
+000008c6 _INTEST                          00000850 _LASER_SET
+00000880 _INTLIMIT                        00000851 _gate
+0000082d _Iindex                          00000852 _SIGN_FUN8SET
+00002125 _Initialize                      00000853 _fps_index
+00000805 _InitingError                    00000854 _XTL2ACT
+00000835 _JumpInit                        00000855 _T14
+00000843 _KEY                             00000856 _T10
+00000896 _Kd                              00000857 _TFLAG
+000008a2 _Ki                              00000858 _Laserpi
+00000888 _Kp                              00000859 _ENIVR
+00000876 _LASACT                          0000085a _T15
+000008ba _LASERPOWER                      0000085b _EMPTY
+00000850 _LASER_SET                       0000085c _T13
+000008aa _LASER_TEMP                      0000085d _FREQ
+00000898 _LASSET                          0000085e _T12
+000030ba _LCDRefresh                      0000085f _FPS_ON_SET
+00003071 _LCDSetup                        00000860 _securityenable
+000008c4 _LHT_D                           00000861 _T11
+00000882 _LHT_DG                          00000862 _Diode_SetPt
+000008be _LHT_I                           00000864 _Diode_SetPt2
+00000892 _LHT_IG                          00000866 _DspTmr
+0000087e _LHT_OLDI                        00000868 _INITCUR
+00000874 _LHT_PG                          0000086a _INITCUR2
+00000800 _LOOP                            0000086c _PULSERATE
+00000858 _Laserpi                         0000086e _DIODECUR
+0000087a _Laserptemp                      00000870 _PWMTime
+0000088a _Laserptemp2                     00000872 _DUMMY
+00000826 _MODE_DONE                       00000874 _LHT_PG
+0000083a _MODE_SEL                        00000876 _LASACT
+0000083d _NEW_LINE                        00000878 _D1_ACT
+000008d8 _OKK                             0000087a _Laserptemp
+00000926 _OKOKOK                          0000087c _D1_DIF
+000008a8 _OLD_ACT                         0000087e _LHT_OLDI
+000008c2 _OLD_D1_INT                      00000880 _INTLIMIT
+0000082c _OLD_ERROR_L                     00000882 _LHT_DG
+00000884 _OLD_ERROR                       00000884 _OLD_ERROR
+000008a6 _OLD_FanLaser_INT                00000886 _D2_ACT
+00000803 _OLD_KEYSW_ON                    00000888 _Kp
+00000814 _PLACE                           0000088a _Laserptemp2
+000008e8 _PRF                             0000088c _DATA
+0000086c _PULSERATE                       0000088e _FanLaser_DIF
+000008ec _PWM                             00000890 _RES_D1
+00000870 _PWMTime                         00000892 _LHT_IG
+00000818 _QSWEN                           00000894 _DIODECUR2
+000008dc _QSW                             00000896 _Kd
+00000811 _QSWEXT                          00000898 _LASSET
+00000810 _QSWON                           0000089a _D1_INT
+00000848 _QUESTION                        0000089c _FanLaser_PROP
+0000089e _RDELTA                          0000089e _RDELTA
+000008b6 _RDIF                            000008a0 _D1_SET
+0000080e _REMLOC                          000008a2 _Ki
+00000815 _RESET                           000008a4 _wt
+00000890 _RES_D1                          000008a6 _OLD_FanLaser_INT
+00000820 _RES_ENVIR                       000008a8 _OLD_ACT
+0000084a _RES_LASER_TEMP                  000008aa _LASER_TEMP
+00000844 _RF_GATE_ON                      000008ac _ENVIR_TEMP
+00000812 _RF_OFF                          000008ae _FanLaser_INT
+00000d80 _RS232_RX                        000008b0 _FanLaser_OLD_ERROR
+00000904 _RST                             000008b2 _TEMP
+0000302f _ReadDallas2                     000008b4 _D1_ERROR
+00002f7c _ReadData                        000008b6 _RDIF
+0000081b _SHTON                           000008b8 _D1_PROP
+000008e0 _SHT                             000008ba _LASERPOWER
+00000852 _SIGN_FUN8SET                    000008bc _D2_SET
+0000083b _Sctr                            000008be _LHT_I
+00000806 _SecurityIniting                 000008c0 _FanLaser_ERROR
+0000080c _Sign_2Min                       000008c2 _OLD_D1_INT
+0000080d _Sign_8Min                       000008c4 _LHT_D
+00000840 _T1                              000008c6 _INTEST
+00000856 _T10                             000008c8 _TK1
+00000861 _T11                             000008cc _FPS
+0000085e _T12                             000008d0 _TLA
+0000085c _T13                             000008d4 _DCL
+00000855 _T14                             000008d8 _OKK
+0000085a _T15                             000008dc _QSW
+0000083c _T2                              000008e0 _SHT
+00000839 _T4                              000008e4 _EXT
+00000838 _T5                              000008e8 _PRF
+00000836 _T6                              000008ec _PWM
+00000837 _T9                              000008f0 _TEV
+000008fc _TDI                             000008f4 _IDI
+000008b2 _TEMP                            000008f8 _TK2
+00000d2a _TEMPTBL1                        000008fc _TDI
+000008f0 _TEV                             00000900 _FPL
+00000857 _TFLAG                           00000904 _RST
+000008c8 _TK1                             00000908 _DIO
+000008f8 _TK2                             0000090c _HOLD
+000008d0 _TLA                             00000912 _msg_globe
+00000801 _TPFLAG                          00000918 _ERROR
+0000092d _TURN_OFF                        0000091f _TURN_ON
+0000091f _TURN_ON                         00000926 _OKOKOK
+00000834 _Time                            0000092d _TURN_OFF
+0000080a _TimeC_2Min                      00000934 _msg15
+0000080b _TimeC_8Min                      0000093c _msg14
+00000809 _TimeC_Min                       00000945 _fps
+00000808 _TimeC_Sec                       0000094f _msg31
+0000081c _UPDRAT                          00000962 _msg25
+00002f17 _WriteDallas2                    00000975 _msg24
+00002e3e _WriteData                       00000989 _msg16
+00000804 _WriteFlag                       0000099d _msg23
+00000824 _XTL1ACT                         000009c0 _msg20
+00000846 _XTL1SET                         000009e3 _msg7
+00000854 _XTL2ACT                         00000a07 _msg6
+0000084e _XTL2SET                         00000a2b _msg8
+0000082f _ZERO                            00000a4f _msg12
+00000028 __STACK_SIZE                     00000a73 _msg21
+00000d5e __cleanup_ptr                    00000a97 _msg29
+0000357d _abort                           00000abb _msg28
+00000849 _adTimerVar                      00000adf _msg11
+000000b5 _alarmAction                     00000b04 _msg17
+0000355e _atexit                          00000b29 _msg18
+00000d9a _buffer_index                    00000b4e _msg19
+00003509 _c_int0                          00000b73 _msg30
+0000084f _chr                             00000b99 _msg13
+000011d4 _clearScreen                     00000bbf _msg3
+00000816 _clearWarning                    00000be7 _msg10
+00000044 _clearstring                     00000c0f _msg27
+0000022f _defaultAction                   00000c37 _msg4
+00001075 _diodeAction                     00000c5f _msg5
+00001114 _diodeAction_1                   00000c87 _msg9
+0000245f _dspfun                          00000caf _msg1
+00001307 _echo2                           00000cd8 _msg2
+000012f3 _echo                            00000d01 _msg26
+00000d8b _echo_msg                        00000d2a _TEMPTBL1
+00003530 _exit                            00000d5e __cleanup_ptr
+0000372d _f$$error                        00000d80 _RS232_RX
+0000083f _fps_index_count                 00000d8b _echo_msg
+00000853 _fps_index                       00000d91 _setting_value
+00000945 _fps                             00000d97 _parameter
+00000803 _functionAction                  00000d9a _buffer_index
+00000851 _gate                            00000d9b end
+00000841 _gate_pre                        00001075 _diodeAction
+00000845 _index                           00001114 _diodeAction_1
+00000613 _keyswFirstOnAction              000011d4 _clearScreen
+0000012c _keyswOffAction                  00001201 _timer1_isr
+00001953 _longToString                    0000123b _xint1
+00001a0a _main                            0000124f _uarttr
+000026c6 _message                         0000126c _sciPolling
+00000be7 _msg10                           000012f3 _echo
+00000adf _msg11                           00001307 _echo2
+00000a4f _msg12                           0000134b _runQuery
+00000b99 _msg13                           000015a8 _runCommand
+0000093c _msg14                           00001934 _sciInit
+00000934 _msg15                           00001953 _longToString
+00000989 _msg16                           000019a1 _stringToLong
+00000b04 _msg17                           00001a0a _main
+00000caf _msg1                            00002125 _Initialize
+00000b29 _msg18                           00002427 _First
+00000b4e _msg19                           0000245f _dspfun
+000009c0 _msg20                           000026af _wait
+00000a73 _msg21                           000026c6 _message
+0000099d _msg23                           0000270e _num2ascii
+00000975 _msg24                           000029d7 _wrtstring
+00000962 _msg25                           00002a19 _wrtchrs
+00000d01 _msg26                           00002a58 _GETTEMP
+00000c0f _msg27                           00002b24 _tempctl
+00000abb _msg28                           00002e3e _WriteData
+00000a97 _msg29                           00002f17 _WriteDallas2
+00000cd8 _msg2                            00002f7c _ReadData
+00000b73 _msg30                           0000302f _ReadDallas2
+00000bbf _msg3                            00003071 _LCDSetup
+0000094f _msg31                           000030ba _LCDRefresh
+00000c37 _msg4                            00003509 _c_int0
+00000c5f _msg5                            00003530 _exit
+00000a07 _msg6                            0000355e _atexit
+000009e3 _msg7                            0000357d C$$EXIT
+00000a2b _msg8                            0000357d _abort
+00000c87 _msg9                            00003580 F$$ADD
+00000912 _msg_globe                       00003634 F$$COMPARE
+0000270e _num2ascii                       00003677 F$$EQ
+00000d97 _parameter                       0000367a F$$NE
+000000e9 _pulseRateAction                 0000367d F$$LE
+00000186 _qswextAction                    00003680 F$$LT
+0000008f _qswonAction                     00003683 F$$GE
+000000cf _resetAction                     00003686 F$$GT
+000015a8 _runCommand                      00003689 F$$DIV
+0000134b _runQuery                        0000372d _f$$error
+00001934 _sciInit                         0000372e F$$FTOI
+0000126c _sciPolling                      0000376f F$$FTOL
+00000860 _securityenable                  000037c2 F$$FTOU
+00000d91 _setting_value                   00003806 F$$ITOF
+000001f2 _shtonAction                     0000382a F$$LTOF
+00000076 _shutterOff                      00003852 F$$ULTOF
+00000825 _smooth                          0000385b F$$MUL
+00003aa2 _strcpy                          000038d7 F$$SUB
+000019a1 _stringToLong                    000038e4 F$$UTOF
+00003abc _strncmp                         000038fd I$$DIV
+00003afd _strncpy                         00003939 I$$MOD
+00002b24 _tempctl                         0000398a L$$DIVS
+00001201 _timer1_isr                      000039c5 L$$MODS
+0000124f _uarttr                          000039fc L$$DIVU
+000026af _wait                            00003a1c L$$MODU
+00000847 _wrf                             00003a74 I$$SAVE
+00002a19 _wrtchrs                         00003a8c I$$REST
+000029d7 _wrtstring                       00003aa2 _strcpy
+000008a4 _wt                              00003abc _strncmp
+0000123b _xint1                           00003afd _strncpy
+00003bb9 cinit                            00003b31 I$$UDIV
+00000300 edata                            00003b57 I$$UMOD
+00000d9b end                              00003bb9 cinit
+00003bb9 etext                            00003bb9 etext
+ffffffff pinit                            ffffffff pinit
+
+[299 symbols]
