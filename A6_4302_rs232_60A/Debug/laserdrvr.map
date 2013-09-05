@@ -1,10 +1,10 @@
 ******************************************************************************
 TMS320C24xx COFF Linker           Version 7.04                   
 ******************************************************************************
->> Linked Mon Jul 22 15:54:44 2013
+>> Linked Thu Sep 05 16:48:29 2013
 
 OUTPUT FILE NAME:   <./Debug/laserdrvr.out>
-ENTRY POINT SYMBOL: "_c_int0"  address: 00002c71
+ENTRY POINT SYMBOL: "_c_int0"  address: 00002c75
 
 
 MEMORY CONFIGURATION
@@ -12,7 +12,7 @@ MEMORY CONFIGURATION
            name     origin    length      used    attributes    fill
          --------  --------  ---------  --------  ----------  --------
 PAGE 0: VECS      00000000  000000040  00000040     RWIX      
-         FLASH     00000044  000007fbc  0000374d     RWIX      
+         FLASH     00000044  000007fbc  00003751     RWIX      
 
 PAGE 1: B2        00000060  000000020  00000000     RWIX      
          B0        00000200  000000100  00000000     RWIX      
@@ -25,40 +25,40 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.text      0    00000044    000032e9     
+.text      0    00000044    000032ed     
                   00000044    00000d0e     actions.obj (.text)
                   00000d52    00000000     CVECTORS.obj (.text)
                   00000d52    0000006b     ISR.obj (.text)
                   00000dbd    000007c8     RS232.obj (.text)
                   00001585    00000683     yucojca.obj (.text)
-                  00001c08    00001069     YucoSupport.obj (.text)
-                  00002c71    00000027     rts2xx.lib : boot.obj (.text)
-                  00002c98    00000050                : exit.obj (.text)
-                  00002ce8    000000b4                : f_add.obj (.text)
-                  00002d9c    00000055                : f_cmp.obj (.text)
-                  00002df1    000000a4                : f_div.obj (.text)
-                  00002e95    00000001                : f_error.obj (.text)
-                  00002e96    00000041                : f_ftoi.obj (.text)
-                  00002ed7    00000053                : f_ftol.obj (.text)
-                  00002f2a    00000044                : f_ftou.obj (.text)
-                  00002f6e    00000024                : f_itof.obj (.text)
-                  00002f92    00000031                : f_ltof.obj (.text)
-                  00002fc3    0000007c                : f_mul.obj (.text)
-                  0000303f    0000000d                : f_sub.obj (.text)
-                  0000304c    00000019                : f_utof.obj (.text)
-                  00003065    0000008d                : idiv.obj (.text)
-                  000030f2    000000ea                : ldiv.obj (.text)
-                  000031dc    0000000c                : lmpy.obj (.text)
-                  000031e8    0000002e                : saverest.obj (.text)
-                  00003216    0000001a                : strcpy.obj (.text)
-                  00003230    00000041                : strncmp.obj (.text)
-                  00003271    00000034                : strncpy.obj (.text)
-                  000032a5    00000088                : udiv.obj (.text)
+                  00001c08    0000106d     YucoSupport.obj (.text)
+                  00002c75    00000027     rts2xx.lib : boot.obj (.text)
+                  00002c9c    00000050                : exit.obj (.text)
+                  00002cec    000000b4                : f_add.obj (.text)
+                  00002da0    00000055                : f_cmp.obj (.text)
+                  00002df5    000000a4                : f_div.obj (.text)
+                  00002e99    00000001                : f_error.obj (.text)
+                  00002e9a    00000041                : f_ftoi.obj (.text)
+                  00002edb    00000053                : f_ftol.obj (.text)
+                  00002f2e    00000044                : f_ftou.obj (.text)
+                  00002f72    00000024                : f_itof.obj (.text)
+                  00002f96    00000031                : f_ltof.obj (.text)
+                  00002fc7    0000007c                : f_mul.obj (.text)
+                  00003043    0000000d                : f_sub.obj (.text)
+                  00003050    00000019                : f_utof.obj (.text)
+                  00003069    0000008d                : idiv.obj (.text)
+                  000030f6    000000ea                : ldiv.obj (.text)
+                  000031e0    0000000c                : lmpy.obj (.text)
+                  000031ec    0000002e                : saverest.obj (.text)
+                  0000321a    0000001a                : strcpy.obj (.text)
+                  00003234    00000041                : strncmp.obj (.text)
+                  00003275    00000034                : strncpy.obj (.text)
+                  000032a9    00000088                : udiv.obj (.text)
 
-.cinit     0    0000332d    00000464     
-                  0000332d    0000045d     yucojca.obj (.cinit)
-                  0000378a    00000006     rts2xx.lib : exit.obj (.cinit)
-                  00003790    00000001     --HOLE-- [fill = 0000]
+.cinit     0    00003331    00000464     
+                  00003331    0000045d     yucojca.obj (.cinit)
+                  0000378e    00000006     rts2xx.lib : exit.obj (.cinit)
+                  00003794    00000001     --HOLE-- [fill = 0000]
 
 .switch    0    00000044    00000000     UNINITIALIZED
 
@@ -146,36 +146,36 @@ address  name                             address  name
 00000800 .bss                             00000028 __STACK_SIZE
 00000300 .data                            00000044 .text
 00000044 .text                            00000044 _clearstring
-00002ce5 C$$EXIT                          00000069 _shutterOff
-00002ce8 F$$ADD                           00000082 _qswonAction
-00002d9c F$$COMPARE                       000000a8 _alarmAction
-00002df1 F$$DIV                           000000c2 _resetAction
-00002ddf F$$EQ                            000000dc _pulseRateAction
-00002e96 F$$FTOI                          00000117 _keyswOffAction
-00002ed7 F$$FTOL                          0000016a _qswextAction
-00002f2a F$$FTOU                          000001d6 _shtonAction
-00002deb F$$GE                            00000213 _defaultAction
-00002dee F$$GT                            00000300 .data
-00002f6e F$$ITOF                          00000300 edata
-00002de5 F$$LE                            00000660 _keyswFirstOnAction
-00002f92 F$$LTOF                          0000076d _functionAction
-00002de8 F$$LT                            00000800 _LOOP
-00002fc3 F$$MUL                           00000800 .bss
-00002de2 F$$NE                            00000801 _TPFLAG
-0000303f F$$SUB                           00000802 _BEEPER
-00002fba F$$ULTOF                         00000803 _OLD_KEYSW_ON
-0000304c F$$UTOF                          00000804 _WriteFlag
-00003065 I$$DIV                           00000805 _ADTIMER
-000030a1 I$$MOD                           00000806 _REMLOC
-00003200 I$$REST                          00000807 _FUNCTION
-000031e8 I$$SAVE                          00000808 _PLACE
-000032a5 I$$UDIV                          00000809 _RESET
-000032cb I$$UMOD                          0000080a _clearWarning
-000030f2 L$$DIVS                          0000080b _RF_OFF
-00003164 L$$DIVU                          0000080c _QSWEXT
-0000312d L$$MODS                          0000080d _QSWEN
-00003184 L$$MODU                          0000080e _EXTDCUR
-000031dc L$$MPY                           0000080f _QSWON
+00002ce9 C$$EXIT                          00000069 _shutterOff
+00002cec F$$ADD                           00000082 _qswonAction
+00002da0 F$$COMPARE                       000000a8 _alarmAction
+00002df5 F$$DIV                           000000c2 _resetAction
+00002de3 F$$EQ                            000000dc _pulseRateAction
+00002e9a F$$FTOI                          00000117 _keyswOffAction
+00002edb F$$FTOL                          0000016a _qswextAction
+00002f2e F$$FTOU                          000001d6 _shtonAction
+00002def F$$GE                            00000213 _defaultAction
+00002df2 F$$GT                            00000300 .data
+00002f72 F$$ITOF                          00000300 edata
+00002de9 F$$LE                            00000660 _keyswFirstOnAction
+00002f96 F$$LTOF                          0000076d _functionAction
+00002dec F$$LT                            00000800 _LOOP
+00002fc7 F$$MUL                           00000800 .bss
+00002de6 F$$NE                            00000801 _TPFLAG
+00003043 F$$SUB                           00000802 _BEEPER
+00002fbe F$$ULTOF                         00000803 _OLD_KEYSW_ON
+00003050 F$$UTOF                          00000804 _WriteFlag
+00003069 I$$DIV                           00000805 _ADTIMER
+000030a5 I$$MOD                           00000806 _REMLOC
+00003204 I$$REST                          00000807 _FUNCTION
+000031ec I$$SAVE                          00000808 _PLACE
+000032a9 I$$UDIV                          00000809 _RESET
+000032cf I$$UMOD                          0000080a _clearWarning
+000030f6 L$$DIVS                          0000080b _RF_OFF
+00003168 L$$DIVU                          0000080c _QSWEXT
+00003131 L$$MODS                          0000080d _QSWEN
+00003188 L$$MODU                          0000080e _EXTDCUR
+000031e0 L$$MPY                           0000080f _QSWON
 00000847 _ADJUST                          00000810 _SHTON
 00000805 _ADTIMER                         00000811 _UPDRAT
 00000802 _BEEPER                          00000812 _DIMAX
@@ -227,7 +227,7 @@ address  name                             address  name
 00000824 _FanLaser_OUT                    00000840 _FanLaser_OUT_OLD
 00000840 _FanLaser_OUT_OLD                00000841 _FPS_LEVEL
 00000878 _FanLaser_PROP                   00000842 _KEY
-0000232c _GETTEMP                         00000843 _FREQ
+0000232d _GETTEMP                         00000843 _FREQ
 000008e8 _HOLD                            00000844 _LASER_SET
 000008b0 _IDI                             00000845 _ENVIR
 00000894 _INTEST                          00000846 _adTimerVar
@@ -242,8 +242,8 @@ address  name                             address  name
 00000844 _LASER_SET                       00000852 _DIODECUR
 00000858 _LASER_TEMP                      00000854 _PWMTime
 00000880 _LASSET                          00000856 _D1_DIF
-00002a43 _LCDRefresh                      00000858 _LASER_TEMP
-000029fa _LCDSetup                        0000085a _LHT_PG
+00002a47 _LCDRefresh                      00000858 _LASER_TEMP
+000029fe _LCDSetup                        0000085a _LHT_PG
 0000086e _LHT_DG                          0000085c _D1_ACT
 000008a2 _LHT_D                           0000085e _D1_SET
 0000089c _LHT_I                           00000860 _DUMMY
@@ -285,8 +285,8 @@ address  name                             address  name
 0000080b _RF_OFF                          000008ac _SHT
 00000cbc _RS232_RX                        000008b0 _IDI
 000008cc _RST                             000008b4 _EXT
-000028e9 _ReadDallas2                     000008b8 _TLA
-0000284f _ReadData                        000008bc _FPS
+000028ed _ReadDallas2                     000008b8 _TLA
+0000284d _ReadData                        000008bc _FPS
 00000810 _SHTON                           000008c0 _DCL
 000008ac _SHT                             000008c4 _TDI
 00000839 _Sctr                            000008c8 _TK2
@@ -309,9 +309,9 @@ address  name                             address  name
 00000902 _TURN_ON                         0000092b _msg26
 0000083c _Time                            0000093e _msg25
 00000811 _UPDRAT                          00000952 _msg24
-000027ea _WriteDallas2                    00000966 _msg16
-0000292b _WriteData                       0000097a _msg19
-0000272b _WriteDatax                      0000099a _msg22
+000027e8 _WriteDallas2                    00000966 _msg16
+0000292f _WriteData                       0000097a _msg19
+00002722 _WriteDatax                      0000099a _msg22
 00000804 _WriteFlag                       000009bd _msg23
 00000820 _XTL1ACT                         000009e0 _msg20
 0000083f _XTL1SET                         00000a03 _msg8
@@ -320,24 +320,24 @@ address  name                             address  name
 00000814 _ZERO                            00000a6f _msg6
 00000028 __STACK_SIZE                     00000a93 _msg7
 00000c9b __cleanup_ptr                    00000ab7 _msg17
-00002ce5 _abort                           00000adc _msg18
+00002ce9 _abort                           00000adc _msg18
 00000846 _adTimerVar                      00000b01 _msg13
 000000a8 _alarmAction                     00000b27 _msg11
-00002cc6 _atexit                          00000b4d _msg10
+00002cca _atexit                          00000b4d _msg10
 00000cd6 _buffer_index                    00000b75 _msg4
-00002c71 _c_int0                          00000b9d _msg3
+00002c75 _c_int0                          00000b9d _msg3
 00000849 _chr                             00000bc5 _msg9
 00000d25 _clearScreen                     00000bed _msg5
 0000080a _clearWarning                    00000c15 _msg1
 00000044 _clearstring                     00000c3e _msg2
 00000213 _defaultAction                   00000c67 _TEMPTBL1
 00000ca7 _diodeAction                     00000c9b __cleanup_ptr
-00001e5d _dspfun                          00000ca7 _diodeAction
+00001e5e _dspfun                          00000ca7 _diodeAction
 00000e58 _echo2                           00000cbc _RS232_RX
 00000e44 _echo                            00000cc7 _echo_msg
 00000cc7 _echo_msg                        00000ccd _setting_value
-00002c98 _exit                            00000cd3 _parameter
-00002e95 _f$$error                        00000cd6 _buffer_index
+00002c9c _exit                            00000cd3 _parameter
+00002e99 _f$$error                        00000cd6 _buffer_index
 00000921 _fps                             00000cd7 end
 0000081c _fps_index                       00000d25 _clearScreen
 00000828 _fps_index_count                 00000d52 _timer1_isr
@@ -349,65 +349,65 @@ address  name                             address  name
 00000117 _keyswOffAction                  00000e9c _runQuery
 000014ce _longToString                    000010f9 _runCommand
 00001585 _main                            000014af _sciInit
-00002025 _message                         000014ce _longToString
+00002026 _message                         000014ce _longToString
 00000b4d _msg10                           0000151c _stringToLong
 00000b27 _msg11                           00001585 _main
 00000c15 _msg1                            00001c08 _Initialize
-00000a4b _msg12                           00001e5d _dspfun
-00000b01 _msg13                           0000200e _wait
-00000918 _msg14                           00002025 _message
-00000910 _msg15                           0000206d _num2ascii
-00000966 _msg16                           000022ab _wrtstring
-00000ab7 _msg17                           000022ed _wrtchrs
-00000adc _msg18                           0000232c _GETTEMP
-0000097a _msg19                           000023f8 _tempctl
-000009e0 _msg20                           0000272b _WriteDatax
-00000a27 _msg21                           000027ea _WriteDallas2
-0000099a _msg22                           0000284f _ReadData
-000009bd _msg23                           000028e9 _ReadDallas2
-00000952 _msg24                           0000292b _WriteData
-00000c3e _msg2                            000029fa _LCDSetup
-0000093e _msg25                           00002a43 _LCDRefresh
-0000092b _msg26                           00002c71 _c_int0
-00000b9d _msg3                            00002c98 _exit
-00000b75 _msg4                            00002cc6 _atexit
-00000bed _msg5                            00002ce5 C$$EXIT
-00000a6f _msg6                            00002ce5 _abort
-00000a93 _msg7                            00002ce8 F$$ADD
-00000a03 _msg8                            00002d9c F$$COMPARE
-00000bc5 _msg9                            00002ddf F$$EQ
-000008ee _msg_globe                       00002de2 F$$NE
-0000206d _num2ascii                       00002de5 F$$LE
-00000cd3 _parameter                       00002de8 F$$LT
-000000dc _pulseRateAction                 00002deb F$$GE
-0000016a _qswextAction                    00002dee F$$GT
-00000082 _qswonAction                     00002df1 F$$DIV
-000000c2 _resetAction                     00002e95 _f$$error
-000010f9 _runCommand                      00002e96 F$$FTOI
-00000e9c _runQuery                        00002ed7 F$$FTOL
-000014af _sciInit                         00002f2a F$$FTOU
-00000dbd _sciPolling                      00002f6e F$$ITOF
-00000ccd _setting_value                   00002f92 F$$LTOF
-000001d6 _shtonAction                     00002fba F$$ULTOF
-00000069 _shutterOff                      00002fc3 F$$MUL
-00000837 _smooth                          0000303f F$$SUB
-00003216 _strcpy                          0000304c F$$UTOF
-0000151c _stringToLong                    00003065 I$$DIV
-00003230 _strncmp                         000030a1 I$$MOD
-00003271 _strncpy                         000030f2 L$$DIVS
-000023f8 _tempctl                         0000312d L$$MODS
-00000d52 _timer1_isr                      00003164 L$$DIVU
-00000da0 _uarttr                          00003184 L$$MODU
-0000200e _wait                            000031dc L$$MPY
-0000082b _wrf                             000031e8 I$$SAVE
-000022ed _wrtchrs                         00003200 I$$REST
-000022ab _wrtstring                       00003216 _strcpy
-0000087e _wt                              00003230 _strncmp
-00000d8c _xint1                           00003271 _strncpy
-0000332d cinit                            000032a5 I$$UDIV
-00000300 edata                            000032cb I$$UMOD
-00000cd7 end                              0000332d cinit
-0000332d etext                            0000332d etext
+00000a4b _msg12                           00001e5e _dspfun
+00000b01 _msg13                           0000200f _wait
+00000918 _msg14                           00002026 _message
+00000910 _msg15                           0000206e _num2ascii
+00000966 _msg16                           000022ac _wrtstring
+00000ab7 _msg17                           000022ee _wrtchrs
+00000adc _msg18                           0000232d _GETTEMP
+0000097a _msg19                           000023f9 _tempctl
+000009e0 _msg20                           00002722 _WriteDatax
+00000a27 _msg21                           000027e8 _WriteDallas2
+0000099a _msg22                           0000284d _ReadData
+000009bd _msg23                           000028ed _ReadDallas2
+00000952 _msg24                           0000292f _WriteData
+00000c3e _msg2                            000029fe _LCDSetup
+0000093e _msg25                           00002a47 _LCDRefresh
+0000092b _msg26                           00002c75 _c_int0
+00000b9d _msg3                            00002c9c _exit
+00000b75 _msg4                            00002cca _atexit
+00000bed _msg5                            00002ce9 C$$EXIT
+00000a6f _msg6                            00002ce9 _abort
+00000a93 _msg7                            00002cec F$$ADD
+00000a03 _msg8                            00002da0 F$$COMPARE
+00000bc5 _msg9                            00002de3 F$$EQ
+000008ee _msg_globe                       00002de6 F$$NE
+0000206e _num2ascii                       00002de9 F$$LE
+00000cd3 _parameter                       00002dec F$$LT
+000000dc _pulseRateAction                 00002def F$$GE
+0000016a _qswextAction                    00002df2 F$$GT
+00000082 _qswonAction                     00002df5 F$$DIV
+000000c2 _resetAction                     00002e99 _f$$error
+000010f9 _runCommand                      00002e9a F$$FTOI
+00000e9c _runQuery                        00002edb F$$FTOL
+000014af _sciInit                         00002f2e F$$FTOU
+00000dbd _sciPolling                      00002f72 F$$ITOF
+00000ccd _setting_value                   00002f96 F$$LTOF
+000001d6 _shtonAction                     00002fbe F$$ULTOF
+00000069 _shutterOff                      00002fc7 F$$MUL
+00000837 _smooth                          00003043 F$$SUB
+0000321a _strcpy                          00003050 F$$UTOF
+0000151c _stringToLong                    00003069 I$$DIV
+00003234 _strncmp                         000030a5 I$$MOD
+00003275 _strncpy                         000030f6 L$$DIVS
+000023f9 _tempctl                         00003131 L$$MODS
+00000d52 _timer1_isr                      00003168 L$$DIVU
+00000da0 _uarttr                          00003188 L$$MODU
+0000200f _wait                            000031e0 L$$MPY
+0000082b _wrf                             000031ec I$$SAVE
+000022ee _wrtchrs                         00003204 I$$REST
+000022ac _wrtstring                       0000321a _strcpy
+0000087e _wt                              00003234 _strncmp
+00000d8c _xint1                           00003275 _strncpy
+00003331 cinit                            000032a9 I$$UDIV
+00000300 edata                            000032cf I$$UMOD
+00000cd7 end                              00003331 cinit
+00003331 etext                            00003331 etext
 ffffffff pinit                            ffffffff pinit
 
 [266 symbols]

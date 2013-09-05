@@ -707,6 +707,7 @@ void WriteDatax()
 	*MCRB = 0xFF1C;
 	*PFDATDIR = (*PFDATDIR | 0x0040);		/* ENABLE TIMEKEEPER */
 	WriteDallas2(0x7F, 1);		// Write command
+	WriteDallas2( QSWEN,0);     //   ++
 	WriteDallas2( (unsigned short)DIMAX, 0 ); 
 	PR = PULSERATE;
 	temp = (unsigned short)((PR & 0xFFFF0000)>>16);
@@ -726,7 +727,6 @@ void WriteDatax()
 	WriteDallas2( XTL1SET,0);
 	WriteDallas2( XTL2SET,0);
 	WriteDallas2( FPS_ON,0);    //   ++
-	WriteDallas2( QSWEN,0);     //   ++
 	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	WriteDallas2( (unsigned short)INITCUR, 0 );
@@ -776,6 +776,7 @@ void ReadData()
 	*MCRB = 0xFF1C;
 	*PFDATDIR = (*PFDATDIR | 0x0040);		/* ENABLE TIMEKEEPER */
 	WriteDallas2(0xFF, 1);		// Write command
+	NULL = ReadDallas2( );       //   ++ tang
 	DIMAX = ReadDallas2( );        
 	i = ReadDallas2( );
 	PR = ((unsigned long)i<<16);
@@ -794,7 +795,6 @@ void ReadData()
 	XTL1SET = ReadDallas2( );
 	XTL2SET = ReadDallas2( );
 	FPS_ON = ReadDallas2( );      //   ++
-	NULL = ReadDallas2( );       //   ++ tang
 	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	INITCUR= ReadDallas2( );
 	securityenable= ReadDallas2( );
