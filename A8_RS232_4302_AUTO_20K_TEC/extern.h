@@ -44,9 +44,9 @@ extern char msg26[];
 extern char msg27[];
 extern unsigned short TEMPTBL1[51]; 
 extern long LASER_TEMP, ENVIR_TEMP, LHT_PG, LHT_IG, LHT_OLDI, LHT_I, LHT_D, LHT_DG;
-extern short Iindex, FUNCTION, OLD_ERROR_L, Sctr, T1, T2, T3, T4, T5, T6, ENIVR;
+extern short Iindex, FUNCTION, OLD_ERROR_L, Sctr;
 extern unsigned short QSWEXT, SHTON, RESET, PLACE, BEEPER, BTIME, KEY,LOOP;
-extern unsigned short REMLOC, QSWON,QSWEN, ADJUST, UPDRAT, EXTDCUR, EXTD,EXTFREQ, FREQ, FCTR;
+extern unsigned short REMLOC, QSWON,QSWEN, ADJUST, UPDRAT, EXTDCUR,EXTD,EXTFREQ, FREQ, FCTR;
 extern unsigned long PWMTime, PULSERATE, DIODECUR, INTEST, wt, Diode_SetPt, DATA, DUMMY; //++ , PWMTime
 extern float D1_ACT, D1_SET,LASACT, LASSET, D1_ERROR, D1_PROP, D1_INT, D1_DIF, RES_D1, RDIF, RDELTA; 
 extern float OLD_ERROR, OLD_D1_INT, OLD_ACT, INTLIMIT;
@@ -113,5 +113,6 @@ extern short MODE_SEL;
 extern short MODE_DONE;
 extern short clearWarning, wrf,index;
 extern short ADCFLAG,ADi;
-extern short ADTEMP0[4],ADTEMP1[4],ADTEMP2[4],ADTEMP3[4],ADTEMP4[4],ADTEMP5[4],ADTEMP6[4],ADTEMP7[4];
+extern float ADTEMP0[5],ADTEMP1[5],ADTEMP2[5],ADTEMP3[5],ADTEMP4[5],ADTEMP5[5],ADTEMP6[5],ADTEMP7[5];
+extern float T1, T2, T3, T4, T5, T6;
 #endif

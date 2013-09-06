@@ -110,9 +110,9 @@ unsigned short TEMPTBL1[51]= {9999, 9880, 9390, 8935, 8500, 8085, 7700,
 
 long LASER_TEMP, ENVIR_TEMP, LHT_PG, LHT_IG, LHT_OLDI, LHT_I, LHT_D, LHT_DG;
 /*  float THOLD, TEMP;														*/
-short Iindex, FUNCTION, OLD_ERROR_L, Sctr, T1, T2, T3, T4, T5, T6, ENIVR;
+short Iindex, FUNCTION, OLD_ERROR_L, Sctr;
 unsigned short QSWEXT, SHTON, RESET, PLACE, BEEPER, BTIME, KEY,LOOP;
-unsigned short REMLOC, QSWON, QSWEN, ADJUST, UPDRAT, EXTDCUR, EXTD,EXTFREQ, FREQ, FCTR;
+unsigned short REMLOC, QSWON, QSWEN, ADJUST, UPDRAT,EXTDCUR, EXTD,EXTFREQ, FREQ, FCTR;
 unsigned long PWMTime, PULSERATE, DIODECUR, INTEST, wt, Diode_SetPt, DATA, DUMMY; //++ PWMTime
 float D1_ACT, D1_SET,LASACT, LASSET, D1_ERROR, D1_PROP, D1_INT, D1_DIF, RES_D1, RDIF, RDELTA;
 float OLD_ERROR, OLD_D1_INT, OLD_ACT, INTLIMIT;
@@ -193,5 +193,6 @@ unsigned short InitingError,JumpInit;
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 short ADCFLAG,ADi;
-short ADTEMP0[4],ADTEMP1[4],ADTEMP2[4],ADTEMP3[4],ADTEMP4[4],ADTEMP5[4],ADTEMP6[4],ADTEMP7[4];
+float ADTEMP0[5],ADTEMP1[5],ADTEMP2[5],ADTEMP3[5],ADTEMP4[5],ADTEMP5[5],ADTEMP6[5],ADTEMP7[5];
+float T1, T2, T3, T4, T5, T6;
 #endif
