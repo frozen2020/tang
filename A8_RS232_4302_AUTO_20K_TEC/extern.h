@@ -113,6 +113,6 @@ extern short MODE_SEL;
 extern short MODE_DONE;
 extern short clearWarning, wrf,index;
 extern short ADCFLAG,ADi;
-extern float ADTEMP0[5],ADTEMP1[5],ADTEMP2[5],ADTEMP3[5],ADTEMP4[5],ADTEMP5[5],ADTEMP6[5],ADTEMP7[5];
+extern float ADTEMP0[26],ADTEMP1[26],ADTEMP2[26],ADTEMP3[26],ADTEMP4[26],ADTEMP5[26],ADTEMP6[26],ADTEMP7[26];
 extern float T1, T2, T3, T4, T5, T6;
 #endif
