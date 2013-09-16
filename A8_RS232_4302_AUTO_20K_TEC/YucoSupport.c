@@ -562,6 +562,65 @@ float GETTEMP(float adcts)
 	}
 
 
+
+void ADctl(void)
+{if(ADCFLAG==1){
+if( !(*ADCTRL2 & 0x1000) )    // MAKE SURE ADC READY
+		{ 
+		ADTEMP0[ADi] =	((((*RESULT0>>6)+(*RESULT8>>6))>>1) & 0x3FF);
+		ADTEMP1[ADi] =	((((*RESULT1>>6)+(*RESULT9>>6))>>1) & 0x3FF);
+		ADTEMP2[ADi] =	((((*RESULT2>>6)+(*RESULT10>>6))>>1) & 0x3FF);
+		ADTEMP3[ADi] =	((((*RESULT3>>6)+(*RESULT11>>6))>>1) & 0x3FF);
+		ADTEMP4[ADi] =	((((*RESULT4>>6)+(*RESULT12>>6))>>1) & 0x3FF);
+		ADTEMP5[ADi] =	((((*RESULT5>>6)+(*RESULT13>>6))>>1) & 0x3FF);
+		ADTEMP6[ADi] =	((((*RESULT6>>6)+(*RESULT14>>6))>>1) & 0x3FF);
+		ADTEMP7[ADi] =	((((*RESULT7>>6)+(*RESULT15>>6))>>1) & 0x3FF);
+   		ADTEMP0[25]+=ADTEMP0[ADi];
+   		ADTEMP1[25]+=ADTEMP1[ADi];
+		ADTEMP2[25]+=ADTEMP2[ADi];
+		ADTEMP3[25]+=ADTEMP3[ADi];
+		ADTEMP4[25]+=ADTEMP4[ADi];
+		ADTEMP5[25]+=ADTEMP5[ADi];
+		ADTEMP6[25]+=ADTEMP6[ADi];
+	   	ADTEMP7[25]+=ADTEMP7[ADi];
+   		}
+		ADi++;
+		if (ADi>=25)
+		{ 
+  		ENVIR=ADTEMP0[25]/25;
+   		T1=ADTEMP1[25]/25;
+		T2=ADTEMP2[25]/25;
+		T3=ADTEMP3[25]/25;
+		T4=ADTEMP4[25]/25;
+		T5=ADTEMP5[25]/25;
+		T6=ADTEMP6[25]/25;
+	   	EXTDCUR=ADTEMP7[25]/25;
+		ADTEMP0[25]=0;
+   		ADTEMP1[25]=0;
+		ADTEMP2[25]=0;
+		ADTEMP3[25]=0;
+		ADTEMP4[25]=0;
+		ADTEMP5[25]=0;
+		ADTEMP6[25]=0;
+	   	ADTEMP7[25]=0;
+  		 /*	{ENVIR=(ADTEMP0[0]+ADTEMP0[1]+ADTEMP0[2]+ADTEMP0[3]+ADTEMP0[4])/5;
+			T1=(ADTEMP1[0]+ADTEMP1[1]+ADTEMP1[2]+ADTEMP1[3]+ADTEMP1[4])/5;
+			T2=(ADTEMP2[0]+ADTEMP2[1]+ADTEMP2[2]+ADTEMP2[3]+ADTEMP2[4])/5;
+			T3=(ADTEMP3[0]+ADTEMP3[1]+ADTEMP3[2]+ADTEMP3[3]+ADTEMP3[4])/5;
+			T4=(ADTEMP4[0]+ADTEMP4[1]+ADTEMP4[2]+ADTEMP4[3]+ADTEMP4[4])/5;
+			T5=(ADTEMP5[0]+ADTEMP5[1]+ADTEMP5[2]+ADTEMP5[3]+ADTEMP5[4])/5;
+			T6=(ADTEMP6[0]+ADTEMP6[1]+ADTEMP6[2]+ADTEMP6[3]+ADTEMP6[4])/5;
+	 	  	EXTDCUR=(ADTEMP7[0]+ADTEMP7[1]+ADTEMP7[2]+ADTEMP7[3]+ADTEMP7[4])/5;
+			}*/
+			ADi=0;
+		}	
+	/*** START ADC SEQUENCE ***/
+    *ADCTRL2 = *ADCTRL2 | 0x4000;
+    wt = 0;
+    *ADCTRL2 = *ADCTRL2 | 0x2000;
+	ADCFLAG=0;
+    }
+}
 /*2. TEMPERATURE CONTROL ROUTINES */
 void tempctl(void)
 {
@@ -689,7 +748,6 @@ void WriteDatax()
 	int i;
 	unsigned long PR,PR1;
 	unsigned short temp,temp1;	 
-	*EVAIMRA = 0x0000;         /* DISable desired EVA group A interrupts  tang*/
 	*MCRB = 0xFF1C;
 	*PFDATDIR = (*PFDATDIR | 0x0040);		/* ENABLE TIMEKEEPER */
 	WriteDallas2(0x7F, 1);		// Write command
@@ -720,7 +778,6 @@ void WriteDatax()
 	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	*PFDATDIR = (*PFDATDIR & ~0x0040);		/* DISABLE TIMEKEEPER */
 	*MCRB = 0xFF0C;
-	*EVAIMRA = 0x0080;         /* enable desired EVA group A interrupts  tang*/
 }  
 
 /*4. WriteDallas2 */
@@ -758,7 +815,6 @@ void ReadData()
 {	unsigned short NULL;  //tang
 	unsigned long i,i1;
 	unsigned long PR,PR1;
-	*EVAIMRA = 0x0000;         /* DISable desired EVA group A interrupts  tang*/
 	*MCRB = 0xFF1C;
 	*PFDATDIR = (*PFDATDIR | 0x0040);		/* ENABLE TIMEKEEPER */
 	WriteDallas2(0xFF, 1);		// Write command
@@ -787,7 +843,6 @@ void ReadData()
 	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	*PFDATDIR = (*PFDATDIR & ~0x0040);		/* DISABLE TIMEKEEPER */
 	*MCRB = 0xFF0C;
-	*EVAIMRA = 0x0080;         /* enable desired EVA group A interrupts  tang*/
 }
 
 /*6. ReadDallas2 */

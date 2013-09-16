@@ -19,7 +19,7 @@ void ReadData( void );
 unsigned short ReadDallas2( void );
 void clearstring( void );
 float GETTEMP(float);
-
+void ADctl(void);
 //RS232
 void sciInit(void);
 //id echo(char *);

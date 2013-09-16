@@ -65,6 +65,7 @@ void main(void)
 	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	while(((*PCDATDIR & 0x0003)==3)&&((*PFDATDIR & 0x0003)==3)&& KEYSW_ON)
 	{//no key pressed 
+ 	ADctl();
 	if( !ADTIMER )
 	{
 	tempctl(); //0.1sec
@@ -353,8 +354,8 @@ void main(void)
 		PLACE = 71;
 		num2ascii(PULSERATE, 1);
 		pulseRateAction();
-		if( UPDRAT ) wait(500);
-		else wait(50);
+		if( UPDRAT ) wait(250);
+		else wait(25);
 		if( UPDRAT ) UPDRAT--;
 		}
 
@@ -380,8 +381,8 @@ void main(void)
 		     else *T3CMPR = (DIODECUR);
 	         PLACE = 25;
 		     num2ascii(DIODECUR,0);
-		     if( UPDRAT ) wait(500);
-		     else wait(50);
+		     if( UPDRAT ) wait(250);
+		     else wait(25);
 		     if( UPDRAT ) UPDRAT--;
 		     Diode_SetPt= DIODECUR;
 		   }
@@ -396,8 +397,8 @@ void main(void)
 		     else *T3CMPR = (DIODECUR);
 	         PLACE = 25;
 		     num2ascii(DIODECUR,0);
-		     if( UPDRAT ) wait(500);
-		     else wait(50);
+		     if( UPDRAT ) wait(250);
+		     else wait(25);
 		     if( UPDRAT ) UPDRAT--;
 		     Diode_SetPt= DIODECUR;
 		   }
@@ -424,8 +425,8 @@ void main(void)
 			else *T3CMPR = (DIODECUR);
    			PLACE = 25;
    			num2ascii(DIODECUR,0);
-			if( UPDRAT ) wait(500);
-			else wait(50);
+			if( UPDRAT ) wait(250);
+			else wait(25);
 			if( UPDRAT ) UPDRAT--;
 			Diode_SetPt= DIODECUR;
 			}
@@ -440,8 +441,8 @@ void main(void)
 			else *T3CMPR = (DIODECUR);
    			PLACE = 25;
    			num2ascii(DIODECUR,0);
-			if( UPDRAT ) wait(500);
-			else wait(50);
+			if( UPDRAT ) wait(250);
+			else wait(25);
 			if( UPDRAT ) UPDRAT--;
 			Diode_SetPt= DIODECUR;
 			}
@@ -476,8 +477,8 @@ void main(void)
 		PLACE = 79;
 		num2ascii(PWMTime, 9);
 		pulseRateAction();
-		if( UPDRAT ) wait(500);
-		else wait(50);
+		if( UPDRAT ) wait(250);
+		else wait(25);
 		if( UPDRAT ) UPDRAT--;
 		}
 

@@ -217,7 +217,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg14);
 	while((ENVACT > ENVSET) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -234,7 +234,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg15);
 	while((ENVACT < 150) && KEYSW_ON)//ENV_MINTEMP
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -255,7 +255,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg14);
 	while((OF1TEM > 400) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -272,7 +272,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg15);
 	while((OF1TEM < 150) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -292,7 +292,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg14);
 	while((OF2TEM > 350) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -309,7 +309,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg15);
 	while((OF2TEM < 150) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -331,7 +331,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg14);
 	while((LASACT > 400) && KEYSW_ON)//LASSET
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -348,7 +348,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg15);
 	while((LASACT < 150) && KEYSW_ON)//LAS_MINTEMP
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -378,7 +378,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg14);
 	while((D1_ACT > 400) && KEYSW_ON)		//coffey
-	{
+	{ADctl();
 		if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -396,7 +396,7 @@ void defaultAction(short * perrFlag, short * pwrFlag)
 	PLACE = 70;
 	message(msg15);
 	while((D1_ACT < 150) && KEYSW_ON)
-	{
+	{ADctl();
 	if( !ADTIMER )	tempctl();
 	}
 	clearstring();
@@ -465,8 +465,8 @@ void keyswFirstOnAction(short * psettleDelay, short * pSaveQSExt,short * pSaveQS
 	*PEDATDIR = *PEDATDIR | 0x0010;
 	
 	WriteFlag = 0;
-	//*psettleDelay = 200;	// Wait 2 minutes for laser temp to settle.
-	*psettleDelay = 3000;	// Wait 2 minutes for laser temp to settle.
+	//*psettleDelay = 3000;	// Wait 2 minutes for laser temp to settle.
+	*psettleDelay = 1000;	// Wait 2 minutes for laser temp to settle.
 	PLACE = 0;
 	port00 = 01;
 	wait(20);
@@ -475,6 +475,7 @@ void keyswFirstOnAction(short * psettleDelay, short * pSaveQSExt,short * pSaveQS
 	while((*psettleDelay) && ( KEYSW_ON ))
 	{
 	wait(10);
+	ADctl();
 	if( !ADTIMER )	tempctl();
 	(*psettleDelay)--;
 	}
@@ -899,8 +900,8 @@ void functionAction(short * pFuncFlg)
    		PLACE = 35;   		
    		num2ascii(ADJUST,0);
    		}
-   		if( UPDRAT ) wait(500);
-		else wait(50);
+   		if( UPDRAT ) wait(250);
+		else wait(25);
 		if( UPDRAT ) UPDRAT--;
 		}		
 /*   DECREASE FUNCTION VALUE   */ 
@@ -1029,8 +1030,8 @@ void functionAction(short * pFuncFlg)
    		PLACE = 35;
    		num2ascii(ADJUST, 0);
    		}
-		if( UPDRAT ) wait(500);
-		else wait(50);
+		if( UPDRAT ) wait(250);
+		else wait(25);
 		if( UPDRAT ) UPDRAT--;
 		}
 		
@@ -1047,8 +1048,8 @@ if(FUNCTION == 8)
     	securityenable=!securityenable;
 		PLACE=13;
 		num2ascii(securityenable,3);
-		if( UPDRAT ) wait(500);
-  		else wait(50);
+		if( UPDRAT ) wait(250);
+  		else wait(25);
   		if( UPDRAT ) UPDRAT--;
   	}
   //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1080,8 +1081,8 @@ if((FUNCTION == 2) && (MODE_SEL==1))
    	 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
   }
   //******************************               
-  if( UPDRAT ) wait(500);
-  else wait(50);
+  if( UPDRAT ) wait(250);
+  else wait(25);
   if( UPDRAT ) UPDRAT--;
  }
 }
